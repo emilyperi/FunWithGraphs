@@ -41,3 +41,21 @@ void UndirectedGraphTest::testAddEdgeThenSize(int u, int v) {
 	this->_graph.add(u, v);
 	testEdgeSize();
 }
+
+
+void UndirectedGraphTest::testRemoveEdge(int u, int v) {
+	testEdgeSize();
+	std::cout << "Removing edge " << "(" << u << ", " << v << ")\n";
+	this->_graph.remove(u, v);
+	testEdgeSize();
+
+}
+
+void UndirectedGraphTest::testRemoveVertex(int v) {
+	testVertexSize();
+	testEdgeSize();
+	std::cout << "Removing vertex " << v << "\n";
+	this->_graph.remove(v);
+	testVertexSize();
+	testEdgeSize();
+}

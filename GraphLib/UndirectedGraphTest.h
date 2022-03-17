@@ -21,6 +21,13 @@ public:
 
 	void testAddEdgeThenSize(int u, int v);
 
+	void testRemoveEdge(int u, int v);
+
+	void testRemoveVertex(int v);
+
+
+
 private:
+
 	UndirectedGraph _graph;
 };

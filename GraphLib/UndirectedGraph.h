@@ -49,6 +49,10 @@ protected:
 
 
 private:
+    bool inRange(int v);
+    bool exist(int v);
+    std::list<int>* getEdges(int v);
+
     std::vector<std::list<int> *> _vertices;
     int _maxVertex = 0;
     int _sizeVertex = 0;
