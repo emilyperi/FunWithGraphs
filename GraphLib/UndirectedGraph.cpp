@@ -1,5 +1,4 @@
 #include <list>
-#include "pch.h"
 #include "UndirectedGraph.h"
 
 UndirectedGraph::UndirectedGraph()
@@ -8,17 +7,17 @@ UndirectedGraph::UndirectedGraph()
 
 int UndirectedGraph::vertexSize()
 {
-	return 0;
+	return _sizeVertex;
 }
 
 int UndirectedGraph::maxVertex()
 {
-	return 0;
+	return _maxVertex;
 }
 
 int UndirectedGraph::edgeSize()
 {
-	return 0;
+	return _sizeEdges;
 }
 
 bool UndirectedGraph::isDirected()
@@ -48,12 +47,26 @@ bool UndirectedGraph::contains(int u, int v)
 
 int UndirectedGraph::add()
 {
-	return 0;
+	_vertices.push_back(new std::list<int> ());
+	_sizeVertex += 1;
+	_maxVertex = _vertices.size();
+
+	return _sizeVertex;
 }
 
 int UndirectedGraph::add(int u, int v)
 {
-	return 0;
+	if (u > _maxVertex || v > _maxVertex) {
+		return 0;
+	}
+	else if (_vertices[u - 1] == NULL || _vertices[v - 1] == NULL) {
+		return 0;
+	}
+	else {
+		(*_vertices[u - 1]).push_back(v);
+		_sizeEdges += 1;
+		return _sizeEdges;
+	}
 }
 
 void UndirectedGraph::remove(int v)

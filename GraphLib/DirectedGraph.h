@@ -4,4 +4,3 @@ class DirectedGraph :
     public Graph
 {
 };
-

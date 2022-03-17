@@ -1,5 +1,8 @@
 #pragma once
+#include <list>
+#include <vector>
 #include "Graph.h"
+
 class UndirectedGraph :
     public Graph
 {
@@ -46,7 +49,7 @@ protected:
 
 
 private:
-    std::list<std::list<int>> _vertices;
+    std::vector<std::list<int> *> _vertices;
     int _maxVertex = 0;
     int _sizeVertex = 0;
     int _sizeEdges = 0;
